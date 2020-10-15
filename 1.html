@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            console.log(123);
+        }
+        var a = new foo()
+        console.log(foo.prototype == a.__proto__);
+        console.log(a.__proto__.constructor);
+        console.log(foo.prototype);
+        console.log(a.__proto__ == foo.prototype);
+        console.log(a.__proto__);
+        console.log(foo.prototype);
+        console.log(typeof [].toString());
+    </script>
+</body>
+
+</html>

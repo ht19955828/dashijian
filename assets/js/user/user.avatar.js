@@ -11,17 +11,22 @@ const options = {
 // 1.3 创建裁剪区域
 $image.cropper(options)
 $('#btnChooseImage').on('click', function() {
-    $('#file').click()
+        $('#file').click()
 
-})
+    })
+    //监听coverFile的change事件
 $('#file').on('change', function(e) {
+    //获取到文件的列表数据
     var filelist = e.target.files
+        //判断用户是否选择了文件
     if (filelist.length === 0) {
         return layer.msg('请选择图片!')
     }
     //文件转化为路径
     var file = e.target.files[0];
+    //根据文件,创建对应的URL地址
     var imgURL = URL.createObjectURL(file);
+    //为裁剪区重新设置图片
     $image
         .cropper('destroy') // 销毁旧的裁剪区域
         .attr('src', imgURL) // 重新设置图片路径
@@ -49,6 +54,8 @@ $('#btnUpload').on('click', function() {
             window.parent.getUserInfo()
         }
     })
+
+
 
 
 
